@@ -31,11 +31,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     height: '5%',
     textAlign: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-around'
   },
   profileCard: {
     borderColor: '#C5C5C5',
-    borderSize: 1,
+    borderWidth: 1,
     borderBottomEndRadius: 2,
   }
 
