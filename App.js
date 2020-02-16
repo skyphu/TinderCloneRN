@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, Platform } from 'react-native';
 import { Images, Profiles } from './App/Themes';
 
 export default class App extends React.Component {
@@ -17,18 +17,17 @@ export default class App extends React.Component {
 
   render() {
     return (
+      <View style={styles.header}>
+        <Text>Icon 1</Text>
+        <Image source={Images.logo} resizeMode="contain" style = {styles.logo} />
+        <Image style={styles.icons} resizeMode="contain" source={Images.chat} />
+      </View>
       <View style={styles.container}>
-        <View style={styles.header}>
-          <Text>Icon 1</Text>
-          <Image style={styles.logo} resizeMode='contain' source={Images.logo} />
-          <Image style={{height: '10%', width: '10%', paddingTop: '10%'}} source={Images.chat} />
-        </View>
-        <View style = {styles.container}>
+        <View style = {styles.profileCard}>
           <Text>Esto es un text</Text>
         </View>
-        {/* This is for the lower icon bar*/}
-        
       </View>
+        
     );
   }
 }
@@ -37,27 +36,30 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
     backgroundColor: '#F0F0F0',
+    justifyContent: 'center'
   },
   icons: {
-    tintColor: '#C5C5C5'
+    tintColor: '#C5C5C5',
+    width: Platform.OS === 'ios' ? '10%' : '10%',
+    height: Platform.OS === 'ios' ? '100%' : '10%'
+    
   },
   header: {
-    flex: 1,
     flexDirection: 'row',
-    height: '5%',
-    textAlign: 'center',
-    justifyContent: 'space-evenly',
-    padding: '5%',
+    justifyContent: 'space-between',
+    height: Platform.OS === 'ios' ?  44: 56,
+    borderBottomWidth: 1,
+    borderColor: '#C5C5C5',
+    margin: 10
   },
   profileCard: {
     borderColor: '#C5C5C5',
     borderWidth: 1,
-    height: '85%',
-    width: '95%',
-    borderBottomEndRadius: 2,
+    height: '75%',
+    width: '90%',
+    borderBottomEndRadius: 5,
+    borderBottomStartRadius: 5,
   },
   buttonRow: {
     flex: 1,
@@ -65,7 +67,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   logo: {
-    width: '25%',
-    height: '20%',
+    width: Platform.OS === 'ios' ? '20%' : '25%',
+    height: Platform. OS === 'ios' ? '60%' : '20%',
   }
 });
