@@ -21,7 +21,7 @@ export default class App extends React.Component {
         <View style={styles.header}>
           <Text>Icon 1</Text>
           <Image style={styles.logo} resizeMode='contain' source={Images.logo} />
-          <Image style={{height: '10%', width: '10%', paddingTop: '10%'}} source={Images.chat} />
+          <Image style={styles.chat} source={Images.chat} />
         </View>
         <View style = {styles.container}>
           <Text>Esto es un text</Text>
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     height: '5%',
     textAlign: 'center',
-    justifyContent: 'space-evenly',
+    justifyContent: 'flex-end',
     padding: '5%',
   },
   profileCard: {
@@ -67,5 +67,11 @@ const styles = StyleSheet.create({
   logo: {
     width: '25%',
     height: '20%',
+  },
+  chat: {
+    top: '4%', 
+    height: '10%', 
+    width: '10%', 
+    paddingTop: '10%',
   }
 });
