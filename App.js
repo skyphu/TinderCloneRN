@@ -19,13 +19,9 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.header}>
-          <TouchableHighlight onPress={console.log('gear touched')}>
-            <Image style={styles.chat} source={Images.gear} />
-          </TouchableHighlight>
-          <Image style={styles.logo} resizeMode='contain' source={Images.logo} />
-          <TouchableHighlight>
-          <Image style={styles.chat} source={Images.chat} />
-          </TouchableHighlight>
+          <Image style={styles.chat} resizeMode= 'contain' source={Images.gear} />
+          <Image styles={Images.logo} resizeMode= 'contain' source={Images.logo} />
+          <Image style={styles.chat} resizeMode= 'contain' source={Images.chat} />
         </View>
         <View style = {styles.container}>
           <Text>Esto es un text</Text>
@@ -41,6 +37,7 @@ export default class App extends React.Component {
         </View>
         
       </View>
+      
     );
   }
 }
