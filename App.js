@@ -20,7 +20,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <View style={styles.header}>
           <Text>Icon 1</Text>
-          <Image>Images.tinder-logo</Image>
+          <Image source={ Images.logo }/>
           <Text>Icon 2</Text>
         </View>
         <View style = {styles.container}>
