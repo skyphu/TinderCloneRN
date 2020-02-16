@@ -20,12 +20,14 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <View style={styles.header}>
           <Text>Icon 1</Text>
-          <Image>Images.tinder-logo</Image>
-          <Text>Icon 2</Text>
+          <Image style={styles.logo} resizeMode='contain' source={Images.logo} />
+          <Image style={{height: '10%', width: '10%', paddingTop: '10%'}} source={Images.chat} />
         </View>
         <View style = {styles.container}>
-          Lorem ipsum blah blah blah
+          <Text>Esto es un text</Text>
         </View>
+        {/* This is for the lower icon bar*/}
+        
       </View>
     );
   }
@@ -36,7 +38,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     backgroundColor: '#F0F0F0',
   },
   icons: {
@@ -47,7 +49,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     height: '5%',
     textAlign: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-evenly',
+    padding: '5%',
   },
   profileCard: {
     borderColor: '#C5C5C5',
@@ -59,6 +62,10 @@ const styles = StyleSheet.create({
   buttonRow: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+  },
+  logo: {
+    width: '25%',
+    height: '20%',
   }
 });
