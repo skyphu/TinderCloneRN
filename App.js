@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, Button, TouchableHighlight } from 'react-native';
 import { Images, Profiles } from './App/Themes';
 
 export default class App extends React.Component {
@@ -19,14 +19,26 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.header}>
-          <Text>Icon 1</Text>
+          <TouchableHighlight onPress={console.log('gear touched')}>
+            <Image style={styles.chat} source={Images.gear} />
+          </TouchableHighlight>
           <Image style={styles.logo} resizeMode='contain' source={Images.logo} />
+          <TouchableHighlight>
           <Image style={styles.chat} source={Images.chat} />
+          </TouchableHighlight>
         </View>
         <View style = {styles.container}>
           <Text>Esto es un text</Text>
         </View>
         {/* This is for the lower icon bar*/}
+        <View>
+         {/* <View>
+            <Button source={Images.rewind} />
+            <Image />
+            <Image />
+          </View>}
+          */}
+        </View>
         
       </View>
     );
@@ -37,8 +49,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
     backgroundColor: '#F0F0F0',
   },
   icons: {
@@ -49,7 +59,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     height: '5%',
     textAlign: 'center',
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between',
     padding: '5%',
   },
   profileCard: {
@@ -57,6 +67,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     height: '85%',
     width: '95%',
+    justifyContent: 'center',
     borderBottomEndRadius: 2,
   },
   buttonRow: {
