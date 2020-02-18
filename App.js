@@ -37,6 +37,7 @@ export default class App extends React.Component {
         {/* This is for the lower icon bar*/}
         </View>
       </View>
+      
     );
   }
 }
@@ -51,12 +52,9 @@ const styles = StyleSheet.create({
   },
   icons: {
     tintColor: '#C5C5C5',
-    width: '10%',
-    height: '90%'
-  },
-  highlight: {
-    width: '100%',
-    height: '100%',
+    width: Platform.OS === 'ios' ? '10%' : '10%',
+    height: Platform.OS === 'ios' ? '100%' : '90%',
+    top: Platform.OS === 'ios' ? '0%' : '5%',
   },
   header: {
     flexDirection: 'row',
@@ -66,7 +64,8 @@ const styles = StyleSheet.create({
     borderColor: '#C5C5C5',
     margin: 5,
     width: '100%',
-    paddingHorizontal: '3%'
+    paddingHorizontal: Platform.OS === 'ios' ? 0 : 10,
+    padding: '0'
   },
   profileCard: {
     borderColor: '#C5C5C5',
@@ -77,8 +76,7 @@ const styles = StyleSheet.create({
     borderBottomStartRadius: 5,
     alignItems: 'center',
     flexDirection: 'column',
-    margin: '20%',
-    backgroundColor: '#FFF'
+    margin: Platform.OS === 'ios' ? '5%' : '20%',
   },
   buttonRow: {
     flex: 1,
@@ -86,8 +84,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   logo: {
-    width: '25%',
-    height: '60%',
+    width: Platform.OS === 'ios' ? '20%' : '60%',
+    height: Platform. OS === 'ios' ? '60%' : '60%',
+    top: '5%'
   },
   gear: {
     top: '10%', 
@@ -96,21 +95,7 @@ const styles = StyleSheet.create({
     margin: '10%',
   },
   profileImg: {
-    height: '110%',
-    width: '100%'
-  },
-  cardText: {
-    flex: 1,
-    flexDirection: 'column',
+    height: Platform.OS === 'ios' ? '90%' : '120%',
     width: '100%',
-    padding: '2%'
-  },
-  name: {
-    fontSize: 24,
-    fontWeight: "700",
-  },
-  occupation: {
-    fontSize: 16,
-    color: '#C5C5C5'
   }
 });
