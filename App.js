@@ -20,25 +20,20 @@ export default class App extends React.Component {
 
       <View style={styles.container}>
         <View style={styles.header}>
-          {/* <TouchableHighlight onPress={console.log('gear touched')}> */}
-            <Image style={styles.icons} resizeMode="contain" source={Images.gear} />
-          {/* </TouchableHighlight> */}
+          <Image style={styles.icons} resizeMode="contain" source={Images.gear} /> 
           <Image style={styles.logo} resizeMode="contain" source={Images.logo} />
-          {/* <TouchableHighlight> */}
-            <Image style={styles.icons} resizeMode="contain" source={Images.chat} />
-          {/* </TouchableHighlight> */}
+          <Image style={styles.icons} resizeMode="contain" source={Images.chat} />
+       
         </View>
         <View style = {styles.profileCard}>
           <Image style={styles.profileImg} resizeMode="cover" source={this.state.profileImage}/>
         </View>
         <View style = {styles.buttonRow}>
-        {/* This is for the lower icon bar*/}
-         {/* <View>
-            <Button source={Images.rewind} />
-            <Image />
-            <Image />
-            </View>}
-          */}
+       {/* This is for the lower buttons */}
+        <View >
+          <Image style={{height: '5%', width: '5%'}} source={Images.like} />
+        </View>
+
         </View>
       </View>
     );
@@ -51,22 +46,23 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: '#F0F0F0',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   icons: {
     tintColor: '#C5C5C5',
     width: Platform.OS === 'ios' ? '10%' : '10%',
-    height: Platform.OS === 'ios' ? '100%' : '90%'
+    height: Platform.OS === 'ios' ? '100%' : '90%',
+    
   },
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    height: Platform.OS === 'ios' ?  44: 56,
+    height: Platform.OS === 'ios' ?  44: '5%',
     borderBottomWidth: 1,
     borderColor: '#C5C5C5',
-    margin: Platform.OS === 'ios' ? 15 : 5,
+    margin: Platform.OS === 'ios' ? 15 : '15%',
     width: '100%',
-    paddingHorizontal: Platform.OS === 'ios' ? 0 : 10
+    paddingHorizontal: Platform.OS === 'ios' ? 0 : '5%',
   },
   profileCard: {
     borderColor: '#C5C5C5',
@@ -77,7 +73,7 @@ const styles = StyleSheet.create({
     borderBottomStartRadius: 5,
     alignItems: 'center',
     flexDirection: 'column',
-    margin: Platform.OS === 'ios' ? '5%' : '20%'
+    margin: Platform.OS === 'ios' ? '5%' : '20%',
   },
   buttonRow: {
     flex: 1,
@@ -85,17 +81,18 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   logo: {
-    width: Platform.OS === 'ios' ? '20%' : '25%',
-    height: Platform. OS === 'ios' ? '60%' : '20%',
+    width: Platform.OS === 'ios' ? '20%' : '20%',
+    height: Platform. OS === 'ios' ? '60%' : '50%',
+    top: '10%',
   },
   gear: {
-    top: '4%', 
-    height: '10%', 
-    width: '10%', 
+    top: '10%', 
+    height: '25%', 
+    width: '25%', 
     margin: '10%',
   },
   profileImg: {
     height: Platform.OS === 'ios' ? '90%' : '120%',
-    width: '100%'
+    width: '100%',
   }
 });
