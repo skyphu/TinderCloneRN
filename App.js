@@ -20,13 +20,8 @@ export default class App extends React.Component {
 
       <View style={styles.container}>
         <View style={styles.header}>
-<<<<<<< HEAD
-          <Image style={styles.icons} resizeMode="contain" source={Images.gear} /> 
-=======
-          {/* <TouchableHighlight onPress={ () => alert('gear touched')}> */}
-            <Image style={styles.icons} resizeMode="contain" source={Images.gear} />
-          {/* </TouchableHighlight> */}
->>>>>>> 1d33c2b2621d8016cc7e55e29c0776966f03c93f
+          
+          <Image style={styles.icons} resizeMode="contain" source={Images.gear} />
           <Image style={styles.logo} resizeMode="contain" source={Images.logo} />
           <Image style={styles.icons} resizeMode="contain" source={Images.chat} />
        
@@ -39,15 +34,7 @@ export default class App extends React.Component {
           </View>
         </View>
         <View style = {styles.buttonRow}>
-<<<<<<< HEAD
-       {/* This is for the lower buttons */}
-        <View >
-          <Image style={{height: '5%', width: '5%'}} source={Images.like} />
-        </View>
-
-=======
         {/* This is for the lower icon bar*/}
->>>>>>> 1d33c2b2621d8016cc7e55e29c0776966f03c93f
         </View>
       </View>
     );
@@ -64,18 +51,12 @@ const styles = StyleSheet.create({
   },
   icons: {
     tintColor: '#C5C5C5',
-<<<<<<< HEAD
-    width: Platform.OS === 'ios' ? '10%' : '10%',
-    height: Platform.OS === 'ios' ? '100%' : '90%',
-    
-=======
     width: '10%',
     height: '90%'
   },
   highlight: {
     width: '100%',
     height: '100%',
->>>>>>> 1d33c2b2621d8016cc7e55e29c0776966f03c93f
   },
   header: {
     flexDirection: 'row',
@@ -83,15 +64,9 @@ const styles = StyleSheet.create({
     height: Platform.OS === 'ios' ?  44: '5%',
     borderBottomWidth: 1,
     borderColor: '#C5C5C5',
-<<<<<<< HEAD
-    margin: Platform.OS === 'ios' ? 15 : '15%',
-    width: '100%',
-    paddingHorizontal: Platform.OS === 'ios' ? 0 : '5%',
-=======
     margin: 5,
     width: '100%',
     paddingHorizontal: '3%'
->>>>>>> 1d33c2b2621d8016cc7e55e29c0776966f03c93f
   },
   profileCard: {
     borderColor: '#C5C5C5',
@@ -102,12 +77,8 @@ const styles = StyleSheet.create({
     borderBottomStartRadius: 5,
     alignItems: 'center',
     flexDirection: 'column',
-<<<<<<< HEAD
-    margin: Platform.OS === 'ios' ? '5%' : '20%',
-=======
     margin: '20%',
     backgroundColor: '#FFF'
->>>>>>> 1d33c2b2621d8016cc7e55e29c0776966f03c93f
   },
   buttonRow: {
     flex: 1,
@@ -115,14 +86,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   logo: {
-<<<<<<< HEAD
-    width: Platform.OS === 'ios' ? '20%' : '20%',
-    height: Platform. OS === 'ios' ? '60%' : '50%',
-    top: '10%',
-=======
     width: '25%',
     height: '60%',
->>>>>>> 1d33c2b2621d8016cc7e55e29c0776966f03c93f
   },
   gear: {
     top: '10%', 
@@ -131,10 +96,6 @@ const styles = StyleSheet.create({
     margin: '10%',
   },
   profileImg: {
-<<<<<<< HEAD
-    height: Platform.OS === 'ios' ? '90%' : '120%',
-    width: '100%',
-=======
     height: '110%',
     width: '100%'
   },
@@ -151,6 +112,5 @@ const styles = StyleSheet.create({
   occupation: {
     fontSize: 16,
     color: '#C5C5C5'
->>>>>>> 1d33c2b2621d8016cc7e55e29c0776966f03c93f
   }
 });
