@@ -20,7 +20,7 @@ export default class App extends React.Component {
 
       <View style={styles.container}>
         <View style={styles.header}>
-          {/* <TouchableHighlight onPress={console.log('gear touched')}> */}
+          {/* <TouchableHighlight onPress={ () => alert('gear touched')}> */}
             <Image style={styles.icons} resizeMode="contain" source={Images.gear} />
           {/* </TouchableHighlight> */}
           <Image style={styles.logo} resizeMode="contain" source={Images.logo} />
@@ -30,15 +30,13 @@ export default class App extends React.Component {
         </View>
         <View style = {styles.profileCard}>
           <Image style={styles.profileImg} resizeMode="cover" source={this.state.profileImage}/>
+          <View style={styles.cardText}>
+            <Text style={styles.name}>{this.state.name}, {this.state.age}</Text>
+            <Text style={styles.occupation}>{this.state.occupation}</Text>
+          </View>
         </View>
         <View style = {styles.buttonRow}>
         {/* This is for the lower icon bar*/}
-         {/* <View>
-            <Button source={Images.rewind} />
-            <Image />
-            <Image />
-            </View>}
-          */}
         </View>
       </View>
     );
@@ -55,8 +53,12 @@ const styles = StyleSheet.create({
   },
   icons: {
     tintColor: '#C5C5C5',
-    width: Platform.OS === 'ios' ? '10%' : '10%',
-    height: Platform.OS === 'ios' ? '100%' : '90%'
+    width: '10%',
+    height: '90%'
+  },
+  highlight: {
+    width: '100%',
+    height: '100%',
   },
   header: {
     flexDirection: 'row',
@@ -64,20 +66,21 @@ const styles = StyleSheet.create({
     height: Platform.OS === 'ios' ?  44: 56,
     borderBottomWidth: 1,
     borderColor: '#C5C5C5',
-    margin: Platform.OS === 'ios' ? 15 : 5,
+    margin: 5,
     width: '100%',
-    paddingHorizontal: Platform.OS === 'ios' ? 0 : 10
+    paddingHorizontal: '3%'
   },
   profileCard: {
     borderColor: '#C5C5C5',
     borderWidth: 1,
-    height: Platform.OS === 'ios' ? '75%' : '60%',
+    height: '60%',
     width: '90%',
     borderBottomEndRadius: 5,
     borderBottomStartRadius: 5,
     alignItems: 'center',
     flexDirection: 'column',
-    margin: Platform.OS === 'ios' ? '5%' : '20%'
+    margin: '20%',
+    backgroundColor: '#FFF'
   },
   buttonRow: {
     flex: 1,
@@ -85,8 +88,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   logo: {
-    width: Platform.OS === 'ios' ? '20%' : '25%',
-    height: Platform. OS === 'ios' ? '60%' : '20%',
+    width: '25%',
+    height: '60%',
   },
   gear: {
     top: '4%', 
@@ -95,7 +98,21 @@ const styles = StyleSheet.create({
     margin: '10%',
   },
   profileImg: {
-    height: Platform.OS === 'ios' ? '90%' : '120%',
+    height: '110%',
     width: '100%'
+  },
+  cardText: {
+    flex: 1,
+    flexDirection: 'column',
+    width: '100%',
+    padding: '2%'
+  },
+  name: {
+    fontSize: 24,
+    fontWeight: "700",
+  },
+  occupation: {
+    fontSize: 16,
+    color: '#C5C5C5'
   }
 });
