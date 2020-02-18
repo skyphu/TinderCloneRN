@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Button, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableHighlight, Platform } from 'react-native';
 import { Images, Profiles } from './App/Themes';
 
 export default class App extends React.Component {
@@ -17,25 +17,29 @@ export default class App extends React.Component {
 
   render() {
     return (
+
       <View style={styles.container}>
         <View style={styles.header}>
-          <Image style={styles.chat} resizeMode= 'contain' source={Images.gear} />
-          <Image styles={Images.logo} resizeMode= 'contain' source={Images.logo} />
-          <Image style={styles.chat} resizeMode= 'contain' source={Images.chat} />
+          {/* <TouchableHighlight onPress={console.log('gear touched')}> */}
+            <Image style={styles.icons} resizeMode="contain" source={Images.gear} />
+          {/* </TouchableHighlight> */}
+          <Image style={styles.logo} resizeMode="contain" source={Images.logo} />
+          {/* <TouchableHighlight> */}
+            <Image style={styles.icons} resizeMode="contain" source={Images.chat} />
+          {/* </TouchableHighlight> */}
         </View>
-        <View style = {styles.container}>
-          <Text>Esto es un text</Text>
+        <View style = {styles.profileCard}>
+          <Image style={styles.profileImg} resizeMode="cover" source={this.state.profileImage}/>
         </View>
+        <View style = {styles.buttonRow}>
         {/* This is for the lower icon bar*/}
-        <View>
          {/* <View>
             <Button source={Images.rewind} />
             <Image />
             <Image />
-          </View>}
+            </View>}
           */}
         </View>
-        
       </View>
       
     );
@@ -47,25 +51,36 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: '#F0F0F0',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   icons: {
-    tintColor: '#C5C5C5'
+    tintColor: '#C5C5C5',
+    width: Platform.OS === 'ios' ? '10%' : '10%',
+    height: Platform.OS === 'ios' ? '100%' : '90%',
+    top: Platform.OS === 'ios' ? '0%' : '5%',
   },
   header: {
-    flex: 1,
     flexDirection: 'row',
-    height: '5%',
-    textAlign: 'center',
     justifyContent: 'space-between',
-    padding: '5%',
+    height: Platform.OS === 'ios' ?  44: 56,
+    borderBottomWidth: 1,
+    borderColor: '#C5C5C5',
+    margin: Platform.OS === 'ios' ? 15 : 5,
+    width: '100%',
+    paddingHorizontal: Platform.OS === 'ios' ? 0 : 10,
+    padding: '0'
   },
   profileCard: {
     borderColor: '#C5C5C5',
     borderWidth: 1,
-    height: '85%',
-    width: '95%',
-    justifyContent: 'center',
-    borderBottomEndRadius: 2,
+    height: Platform.OS === 'ios' ? '75%' : '60%',
+    width: '90%',
+    borderBottomEndRadius: 5,
+    borderBottomStartRadius: 5,
+    alignItems: 'center',
+    flexDirection: 'column',
+    margin: Platform.OS === 'ios' ? '5%' : '20%',
   },
   buttonRow: {
     flex: 1,
@@ -73,13 +88,18 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   logo: {
-    width: '25%',
-    height: '20%',
+    width: Platform.OS === 'ios' ? '20%' : '60%',
+    height: Platform. OS === 'ios' ? '60%' : '60%',
+    top: '5%'
   },
-  chat: {
+  gear: {
     top: '4%', 
     height: '10%', 
     width: '10%', 
-    paddingTop: '10%',
+    margin: '10%',
+  },
+  profileImg: {
+    height: Platform.OS === 'ios' ? '90%' : '120%',
+    width: '100%',
   }
 });
