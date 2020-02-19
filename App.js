@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableHighlight, Platform } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Platform } from 'react-native';
 import { Images, Profiles } from './App/Themes';
+import { styles } from './styles.js'
 
 export default class App extends React.Component {
   constructor() {
@@ -21,7 +22,9 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <View style={styles.header}>
           
-          <Image style={styles.icons} resizeMode="contain" source={Images.gear} />
+              <Image style={styles.icons} resizeMode="contain" source={Images.gear} />
+           
+          
           <Image style={styles.logo} resizeMode="contain" source={Images.logo} />
           <Image style={styles.icons} resizeMode="contain" source={Images.chat} />
        
@@ -35,6 +38,34 @@ export default class App extends React.Component {
         </View>
         <View style = {styles.buttonRow}>
         {/* This is for the lower icon bar*/}
+          <TouchableOpacity onPress={ () => console.log('SUPER LIKE')}>
+            <View >
+              <Image style={{width: 55, height: 55, resizeMode: 'contain'}} source={Images.superLike} />
+            </View>
+          </TouchableOpacity>          
+          <TouchableOpacity onPress={() => console.log('LIKE')} >
+            <View >
+              <Image style={{width: 55, height: 55, resizeMode: 'contain'}} source={Images.like} />
+            </View>
+          </TouchableOpacity>      
+          <TouchableOpacity onPress={ () => console.log('BOOST')}>
+            <View >
+              <Image style={{width: 55, height: 55, resizeMode: 'contain'}} source={Images.boost} />
+            </View>
+          </TouchableOpacity>
+         <TouchableOpacity onPress= { () => console.log('NOPE')}>
+            <View>
+              <Image style={{width: 50, height: 55, resizeMode: 'contain'}} source={Images.nope} />
+            </View>
+         </TouchableOpacity>
+          <TouchableOpacity onPress= { () => console.log('REWIND')}>
+            <View>
+              <Image style={{width:55, height:55, resizeMode: 'contain' }} source={Images.rewind} />
+            </View>
+          </TouchableOpacity>
+         
+          
+          
         </View>
       </View>
       
@@ -42,60 +73,3 @@ export default class App extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    backgroundColor: '#F0F0F0',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  icons: {
-    tintColor: '#C5C5C5',
-    width: Platform.OS === 'ios' ? '10%' : '10%',
-    height: Platform.OS === 'ios' ? '100%' : '90%',
-    top: Platform.OS === 'ios' ? '0%' : '5%',
-  },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    height: Platform.OS === 'ios' ?  44: '5%',
-    borderBottomWidth: 1,
-    borderColor: '#C5C5C5',
-    margin: 5,
-    width: '100%',
-    paddingHorizontal: Platform.OS === 'ios' ? 0 : 10,
-    padding: '0'
-  },
-  profileCard: {
-    borderColor: '#C5C5C5',
-    borderWidth: 1,
-    height: '60%',
-    width: '90%',
-    borderBottomEndRadius: 5,
-    borderBottomStartRadius: 5,
-    alignItems: 'center',
-    flexDirection: 'column',
-    margin: Platform.OS === 'ios' ? '5%' : '20%',
-  },
-  buttonRow: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-  },
-  logo: {
-    width: Platform.OS === 'ios' ? '20%' : '60%',
-    height: Platform. OS === 'ios' ? '60%' : '60%',
-    top: '5%'
-  },
-  gear: {
-    top: '10%', 
-    height: '25%', 
-    width: '25%', 
-    margin: '10%',
-  },
-  profileImg: {
-    height: Platform.OS === 'ios' ? '90%' : '120%',
-    width: '100%',
-  }
-});
