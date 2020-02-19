@@ -3,16 +3,33 @@ import { StyleSheet, Text, View, Image, TouchableHighlight, Platform } from 'rea
 import { Images, Profiles } from './App/Themes';
 import { styles } from './styles.js'
 
+const cards = [{
+  harold: Profiles.harold,
+  barbara: Profiles.barbara,
+  james: Profiles.james,
+  john: Profiles.john,
+  linda: Profiles.linda,
+  liz: Profiles.liz,
+  mary: Profiles.mary,
+  michael: Profiles.michael,
+  patricia: Profiles.patricia,
+  robert: Profiles.robert
+}];
+
 export default class App extends React.Component {
   constructor() {
     super();
 
-    var haroldProfile = Profiles.harold;
+    let harold = Profiles.harold;
     this.state = {
-      profileImage: haroldProfile.image,
-      name: haroldProfile.name,
-      age: haroldProfile.age,
-      occupation: haroldProfile.occupation
+      profiles: {
+          profileImg: harold.image,
+          name: harold.name,
+          age: harold.age,
+          occupation: harold.occupation
+      }
+      
+    }
     };
   }
 
@@ -30,7 +47,7 @@ export default class App extends React.Component {
           {/* </TouchableHighlight> */}
         </View>
         <View style = {styles.profileCard}>
-          <Image style={styles.profileImg} resizeMode="cover" source={this.state.profileImage}/>
+          <Image style={styles.profileImg} resizeMode="cover" source={this.state.profileImg}/>
           <View style={styles.cardText}>
             <Text style={styles.name}>{this.state.name}, {this.state.age}</Text>
             <Text style={styles.occupation}>{this.state.occupation}</Text>

@@ -62,7 +62,7 @@ export const styles = StyleSheet.create({
       flex: 1,
       flexDirection: 'column',
       width: '100%',
-      padding: Platform.isPad ? 10 : '2%'
+      padding: Platform.isPad ? 10 : '2%',
     },
     name: {
       fontSize: Platform.isPad ? 36: 24,
@@ -70,7 +70,13 @@ export const styles = StyleSheet.create({
     },
     occupation: {
       fontSize: Platform.isPad ? 24 : 16,
-      color: '#C5C5C5'
-    }
+      color: '#C5C5C5',
+    },
+    noMoreCards: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+
   });
   
