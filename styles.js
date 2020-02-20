@@ -18,14 +18,15 @@ export const styles = StyleSheet.create({
       height: '100%',
     },
     header: {
+      flex: 1,
       flexDirection: 'row',
       justifyContent: 'space-between',
-      height: Platform.isPad ?  44: 56,
+      height: Platform.isPad ?  44: 55,
       borderBottomWidth: 1,
       borderColor: '#C5C5C5',
       margin: Platform.isPad ? 15 : 5,
       width: '100%',
-      paddingHorizontal: Platform.isPad ? 0 : 10,
+      paddingHorizontal: Platform.isPad ? 0 : 5,
       top: Platform.isPad ? 0: '10%',
     },
     profileCard: {
@@ -43,9 +44,15 @@ export const styles = StyleSheet.create({
     buttonRow: {
       flex: 1,
       flexDirection: 'row-reverse',
-      justifyContent: 'space-around',
+      justifyContent: 'space-between',
+      height: Platform.isPad ?  44: 56,
       
-            
+      borderColor: '#C5C5C5',
+      margin: Platform.isPad ? 15 : 5, // En android esto no es necesario
+      width: '100%',
+      paddingHorizontal: Platform.isPad ? 0 : '5%', // Must add percentage on Tablet
+      top: Platform.isPad ? 0: '1%',
+                  
     },
     logo: {
       width: Platform.isPad ? '20%' : '25%',
@@ -82,5 +89,26 @@ export const styles = StyleSheet.create({
       fontSize: 22,
     },
 
+    smallButton: {
+      borderRadius: 50, 
+      backgroundColor: 'white', 
+      width: 50, //Read comment for Height and Width in BiggerButton[bellow this]
+      height: 50, 
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    biggerButton:{
+      borderRadius: 50, 
+      backgroundColor: 'white', 
+      width: 60, //When i chang it to % it dissapears. Check if it behave the same in IOS
+      height: 60, //Same thing here as above. 
+      justifyContent: 'center', 
+      alignItems: 'center',
+    },
+    buttonIcon:{
+      width: '60%', 
+      height: '60%', 
+      resizeMode: 'contain',
+    }
   });
   

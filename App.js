@@ -41,30 +41,31 @@ export default class App extends React.Component {
         <View style = {styles.buttonRow}>
         {/* This is for the lower icon bar*/}
           <TouchableOpacity onPress={ () => console.log('SUPER LIKE')}>
-            <View >
-              <Image style={{width: 55, height: 55, resizeMode: 'contain'}} source={Images.superLike} />
+            <View style={styles.smallButton}>
+              <Image style={styles.buttonIcon} source={Images.superLike} />
             </View>
           </TouchableOpacity>          
           <TouchableOpacity onPress={() => console.log('LIKE')} >
-            <View >
-              <Image style={{width: 55, height: 55, resizeMode: 'contain'}} source={Images.like} />
+            <View style={styles.biggerButton}>
+              <Image style={styles.buttonIcon} source={Images.like} />
             </View>
           </TouchableOpacity>      
           <TouchableOpacity onPress={ () => console.log('BOOST')}>
-            <View >
-              <Image style={{width: 55, height: 55, resizeMode: 'contain'}} source={Images.boost} />
+            <View style={styles.smallButton}>
+              <Image style={styles.buttonIcon} source={Images.boost} />
             </View>
           </TouchableOpacity>
          <TouchableOpacity onPress= { () => console.log('NOPE')}>
-            <View>
-              <Image style={{width: 50, height: 55, resizeMode: 'contain'}} source={Images.nope} />
+            <View style={styles.biggerButton}>
+              <Image style={styles.buttonIcon} source={Images.nope} />
             </View>
          </TouchableOpacity>
           <TouchableOpacity onPress= { () => console.log('REWIND')}>
-            <View>
-              <Image style={{width:55, height:55, resizeMode: 'contain' }} source={Images.rewind} />
+            <View style={styles.smallButton}>
+              <Image style={styles.buttonIcon} source={Images.rewind} />
             </View>
-          </TouchableOpacity>
+          </TouchableOpacity>              
+          
         </View>
       </View>
       
