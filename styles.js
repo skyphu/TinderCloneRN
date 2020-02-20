@@ -28,27 +28,25 @@ export const styles = StyleSheet.create({
     profileCard: {
       borderColor: '#C5C5C5',
       borderWidth: 1,
-      height: 400,
-      width: 370,
+      height: Platform.isPad ? '75%' : 55,
+      width: 5,
       borderBottomEndRadius: 10,
       borderBottomStartRadius: 10,
       alignItems: 'center',
       flexDirection: 'column',
       margin: Platform.isPad ? '5%' : '15%',
-      backgroundColor: '#FFF',
+      backgroundColor: '#FFF',    
     },
     buttonRow: {
       flex: 1,
       flexDirection: 'row-reverse',
       justifyContent: 'space-between',
-      height: Platform.isPad ?  44: 56,
-      
+      height: Platform.isPad ?  44: 56,      
       borderColor: '#C5C5C5',
       margin: Platform.isPad ? 15 : 5, // En android esto no es necesario
       width: '100%',
       paddingHorizontal: Platform.isPad ? 0 : '5%', // Must add percentage on Tablet
-      top: Platform.isPad ? 0: '1%',
-                  
+      top: Platform.isPad ? 0: '1%',           
     },
     logo: {
       width: Platform.isPad ? '20%' : '25%',
@@ -61,8 +59,15 @@ export const styles = StyleSheet.create({
       margin: '10%',
     },
     profileImg: {
-      height: Platform.isPad ? 600 : 300,
-      width: Platform.isPad ? 600 : 350,
+      height: Platform.isPad ? '90%' : '110%',
+      width: '100%',
+      justifyContent: 'center',
+    },
+    cardText: {
+      flex: 1,
+      flexDirection: 'column',
+      width: '100%',
+      padding: Platform.isPad ? 10 : '2%',
     },
     name: {
       paddingTop: 10,
@@ -80,7 +85,6 @@ export const styles = StyleSheet.create({
       alignItems: 'center',
       fontSize: 22,
     },
-
     smallButton: {
       borderRadius: 50, 
       backgroundColor: 'white', 
