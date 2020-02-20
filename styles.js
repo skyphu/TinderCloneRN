@@ -6,12 +6,12 @@ export const styles = StyleSheet.create({
       flexDirection: 'column',
       backgroundColor: '#F0F0F0',
       justifyContent: 'center',
-      alignItems: 'center'
+      alignItems: 'center',
     },
     icons: {
       tintColor: '#C5C5C5',
       width: '10%',
-      height: Platform.isPad ? '100%' : '90%'
+      height: Platform.isPad ? '100%' : '90%',
     },
     highlight: {
       width: '100%',
@@ -25,24 +25,27 @@ export const styles = StyleSheet.create({
       borderColor: '#C5C5C5',
       margin: Platform.isPad ? 15 : 5,
       width: '100%',
-      paddingHorizontal: Platform.isPad ? 0 : 10
+      paddingHorizontal: Platform.isPad ? 0 : 10,
+      top: Platform.isPad ? 0: '10%',
     },
     profileCard: {
       borderColor: '#C5C5C5',
       borderWidth: 1,
       height: Platform.isPad ? '75%' : '60%',
       width: '90%',
-      borderBottomEndRadius: 5,
-      borderBottomStartRadius: 5,
+      borderBottomEndRadius: 10,
+      borderBottomStartRadius: 10,
       alignItems: 'center',
       flexDirection: 'column',
-      margin: Platform.isPad ? '5%' : '20%',
-      backgroundColor: '#FFF'
+      margin: Platform.isPad ? '5%' : '15%',
+      backgroundColor: '#FFF',
     },
     buttonRow: {
       flex: 1,
-      flexDirection: 'row',
+      flexDirection: 'row-reverse',
       justifyContent: 'space-around',
+      
+            
     },
     logo: {
       width: Platform.isPad ? '20%' : '25%',
@@ -56,7 +59,7 @@ export const styles = StyleSheet.create({
     },
     profileImg: {
       height: Platform.isPad ? '90%' : '110%',
-      width: '100%'
+      width: '100%',
     },
     cardText: {
       flex: 1,

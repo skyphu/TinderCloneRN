@@ -1,64 +1,64 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableHighlight, Platform } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Platform } from 'react-native';
 import { Images, Profiles } from './App/Themes';
-import { styles } from './styles.js'
+import { styles } from './styles.js';
+import Card from './App/Components/Card.js';
+import SwipeCards from './SwipeCards';
 
-const cards = [{
-  harold: Profiles.harold,
-  barbara: Profiles.barbara,
-  james: Profiles.james,
-  john: Profiles.john,
-  linda: Profiles.linda,
-  liz: Profiles.liz,
-  mary: Profiles.mary,
-  michael: Profiles.michael,
-  patricia: Profiles.patricia,
-  robert: Profiles.robert
-}];
 
 export default class App extends React.Component {
   constructor() {
     super();
 
-    let harold = Profiles.harold;
     this.state = {
-      profiles: {
-          profileImg: harold.image,
-          name: harold.name,
-          age: harold.age,
-          occupation: harold.occupation
+      cards: Profiles
       }
-      
-    }
     };
-  }
 
   render() {
     return (
 
       <View style={styles.container}>
         <View style={styles.header}>
-          {/* <TouchableHighlight onPress={ () => alert('gear touched')}> */}
-            <Image style={styles.icons} resizeMode="contain" source={Images.gear} />
-          {/* </TouchableHighlight> */}
+          <Image style={styles.icons} resizeMode="contain" source={Images.gear} />
           <Image style={styles.logo} resizeMode="contain" source={Images.logo} />
-          {/* <TouchableHighlight> */}
-            <Image style={styles.icons} resizeMode="contain" source={Images.chat} />
-          {/* </TouchableHighlight> */}
+          <Image style={styles.icons} resizeMode="contain" source={Images.chat} />
         </View>
-        <View style = {styles.profileCard}>
-          <Image style={styles.profileImg} resizeMode="cover" source={this.state.profileImg}/>
-          <View style={styles.cardText}>
-            <Text style={styles.name}>{this.state.name}, {this.state.age}</Text>
-            <Text style={styles.occupation}>{this.state.occupation}</Text>
-          </View>
-        </View>
+        <SwipeCards
+          cards = {this.state.cards}
+          renderCard={(cardData) => <Card {...cardData} />}
+        />  
         <View style = {styles.buttonRow}>
         {/* This is for the lower icon bar*/}
+          <TouchableOpacity onPress={ () => console.log('SUPER LIKE')}>
+            <View >
+              <Image style={{width: 55, height: 55, resizeMode: 'contain'}} source={Images.superLike} />
+            </View>
+          </TouchableOpacity>          
+          <TouchableOpacity onPress={() => console.log('LIKE')} >
+            <View >
+              <Image style={{width: 55, height: 55, resizeMode: 'contain'}} source={Images.like} />
+            </View>
+          </TouchableOpacity>      
+          <TouchableOpacity onPress={ () => console.log('BOOST')}>
+            <View >
+              <Image style={{width: 55, height: 55, resizeMode: 'contain'}} source={Images.boost} />
+            </View>
+          </TouchableOpacity>
+         <TouchableOpacity onPress= { () => console.log('NOPE')}>
+            <View>
+              <Image style={{width: 50, height: 55, resizeMode: 'contain'}} source={Images.nope} />
+            </View>
+         </TouchableOpacity>
+          <TouchableOpacity onPress= { () => console.log('REWIND')}>
+            <View>
+              <Image style={{width:55, height:55, resizeMode: 'contain' }} source={Images.rewind} />
+            </View>
+          </TouchableOpacity>
         </View>
       </View>
+      
     );
   }
 }
-
 
