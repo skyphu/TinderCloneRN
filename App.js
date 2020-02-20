@@ -36,7 +36,7 @@ export default class App extends React.Component {
         </View>
 
 
-    <View style={{height: '35%', width: '60%', justifyContent: 'center'} /*styles.profileCard*/}>
+    <View style={styles.profileCard}>
           <SwipeCards
             cards = {this.state.cards}
             renderCard={(cardData) => {
