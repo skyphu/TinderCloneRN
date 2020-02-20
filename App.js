@@ -34,10 +34,19 @@ export default class App extends React.Component {
           <Image style={styles.logo} resizeMode="contain" source={Images.logo} />
           <Image style={styles.icons} resizeMode="contain" source={Images.chat} />
         </View>
-        <SwipeCards
-          cards = {this.state.cards}
-          renderCard={(cardData) => <Card {...cardData} />}
-        />  
+
+
+    <View style={{height: '35%', width: '60%', justifyContent: 'center'} /*styles.profileCard*/}>
+          <SwipeCards
+            cards = {this.state.cards}
+            renderCard={(cardData) => {
+            return <Card {...cardData} />;
+          }}
+        /> 
+        </View>
+
+
+        
         <View style = {styles.buttonRow}>
         {/* This is for the lower icon bar*/}
           <TouchableOpacity onPress={ () => console.log('SUPER LIKE')}>
