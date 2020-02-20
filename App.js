@@ -19,8 +19,10 @@ export default class App extends React.Component {
           <Image style={styles.logo} resizeMode="contain" source={Images.logo} />
           <Image style={styles.icons} resizeMode="contain" source={Images.chat} />
         </View>
+
+
         <View>
-          <SwipeCards style= {{ flex: 1}}/>  
+          <SwipeCards /> 
         </View>
         <View style = {styles.buttonRow}>
         {/* This is for the lower icon bar*/}
