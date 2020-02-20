@@ -13,10 +13,6 @@ export const styles = StyleSheet.create({
       width: '10%',
       height: Platform.isPad ? '100%' : '90%',
     },
-    highlight: {
-      width: '100%',
-      height: '100%',
-    },
     header: {
       flex: 1,
       flexDirection: 'row',
@@ -32,8 +28,8 @@ export const styles = StyleSheet.create({
     profileCard: {
       borderColor: '#C5C5C5',
       borderWidth: 1,
-      height: Platform.isPad ? '75%' : '60%',
-      width: '90%',
+      height: 400,
+      width: 370,
       borderBottomEndRadius: 10,
       borderBottomStartRadius: 10,
       alignItems: 'center',
@@ -65,20 +61,16 @@ export const styles = StyleSheet.create({
       margin: '10%',
     },
     profileImg: {
-      height: Platform.isPad ? '90%' : '110%',
-      width: '100%',
-    },
-    cardText: {
-      flex: 1,
-      flexDirection: 'column',
-      width: '100%',
-      padding: Platform.isPad ? 10 : '2%',
+      height: Platform.isPad ? 600 : 300,
+      width: Platform.isPad ? 600 : 350,
     },
     name: {
+      paddingTop: 10,
       fontSize: Platform.isPad ? 36: 24,
       fontWeight: "700",
     },
     occupation: {
+      paddingBottom: 10,
       fontSize: Platform.isPad ? 24 : 16,
       color: '#C5C5C5',
     },
