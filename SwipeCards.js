@@ -2,9 +2,8 @@
 'use strict';
  
 import React, { Component } from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
-import {Profiles, Images} from './App/Themes'
- 
+import {Text, View, Image} from 'react-native';
+import { styles } from './styles.js';
 import SwipeCards from 'react-native-swipe-cards';
  
 class Card extends React.Component {
@@ -14,9 +13,12 @@ class Card extends React.Component {
  
   render() {
     return (
-      <View style={[styles.card, {backgroundColor: 'white'}]}>
-        <Text>{this.props.name}, {this.props.age}</Text>
-        <Text>{this.props.occupation}</Text>
+      <View style = {styles.profileCard}>
+          <Image style={styles.profileImg} resizeMode="cover" source={this.props.image}/>
+          <View style={styles.cardText}>
+              <Text style={styles.name}>{this.props.name}, {this.props.age}</Text>
+              <Text style={styles.occupation}>{this.props.occupation}</Text>
+          </View>
       </View>
     )
   }
@@ -29,8 +31,10 @@ class NoMoreCards extends Component {
  
   render() {
     return (
-      <View>
-        <Text style={styles.noMoreCardsText}>No more cards</Text>
+      <View style = {styles.profileCard}>
+          <View style={styles.cardText}>
+            <Text style={styles.noMoreCards}>No more cards</Text>
+          </View>
       </View>
     )
   }
@@ -39,26 +43,23 @@ class NoMoreCards extends Component {
 export default class extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      cards: Profiles,
-    };
   }
  
   handleYup (card) {
-    console.log(`Yup for ${card.text}`)
+    console.log(`Yup for ${card.name}`)
   }
   handleNope (card) {
-    console.log(`Nope for ${card.text}`)
+    console.log(`Nope for ${card.name}`)
   }
   handleMaybe (card) {
-    console.log(`Maybe for ${card.text}`)
+    console.log(`Maybe for ${card.name}`)
   }
   render() {
     // If you want a stack of cards instead of one-per-one view, activate stack mode
     // stack={true}
     return (
       <SwipeCards
-        cards={this.state.cards}
+        cards={this.props.cards}
         renderCard={(cardData) => <Card {...cardData} />}
         renderNoMoreCards={() => <NoMoreCards />}
  
@@ -70,15 +71,3 @@ export default class extends React.Component {
     )
   }
 }
-
-const styles = StyleSheet.create({
-  card: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: 300,
-    height: 300,
-  },
-  noMoreCardsText: {
-    fontSize: 22,
-  }
-})
