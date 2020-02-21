@@ -15,15 +15,17 @@ export default class App extends React.Component {
 
       <View style={styles.container}>
         <View style={styles.header}>
-          <Image style={styles.icons} resizeMode="contain" source={Images.gear} />
+            <TouchableOpacity onclick = {() => alert("settings clicked!")}>
+              <View>
+                <Image style={styles.icons} resizeMode="contain" source={Images.gear} />
+              </View>
+            </TouchableOpacity>
           <Image style={styles.logo} resizeMode="contain" source={Images.logo} />
           <Image style={styles.icons} resizeMode="contain" source={Images.chat} />
         </View>
-
-
-        <View>
+        {/* <View> */}
           <SwipeCards /> 
-        </View>
+        {/* </View> */}
         <View style = {styles.buttonRow}>
         {/* This is for the lower icon bar*/}
           <TouchableOpacity onPress={ () => console.log('SUPER LIKE')}>

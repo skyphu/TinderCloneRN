@@ -14,7 +14,7 @@ class Card extends React.Component {
  
   render() {
     return (
-      <View style={{width: 370, height: 300}}>
+      <View style={styles.profileCard}>
           <Image style={styles.profileImg} resizeMode='cover' source={this.props.image}/>
           <View style={styles.cardText}>
               <Text style={styles.name}>{this.props.name}, {this.props.age}</Text>
@@ -32,7 +32,7 @@ class NoMoreCards extends Component {
  
   render() {
     return (
-          <View style={styles.cardText}>
+          <View style={styles.name}>
             <Text style={styles.noMoreCards}>No more cards</Text>
           </View>
     )
