@@ -14,7 +14,7 @@ class Card extends React.Component {
  
   render() {
     return (
-      <View style={styles.SwipeCards/*{width: 370, height: 400}*/}>
+      <View style={styles.profileCard}>
           <Image style={styles.profileImg} resizeMode='cover' source={this.props.image}/>
           <View style={styles.cardText}>
               <Text style={styles.name}>{this.props.name}, {this.props.age}</Text>

@@ -12,39 +12,38 @@ export default class App extends React.Component {
 
   render() {
     return (
-
       <View style={styles.container}>
         <View style={styles.header}>
           <Image style={styles.icons} resizeMode="contain" source={Images.gear} />
           <Image style={styles.logo} resizeMode="contain" source={Images.logo} />
           <Image style={styles.icons} resizeMode="contain" source={Images.chat} />
         </View>
-        <View>
-          <SwipeCards style= {{ flex: 1}}/>  
+        <View style={{height: 550, width: 300}}>
+          <SwipeCards/>  
         </View>
         <View style = {styles.buttonRow}>
         {/* This is for the lower icon bar*/}
-          <TouchableOpacity onPress={ () => console.log('SUPER LIKE')}>
+          <TouchableOpacity onPress={ () => alert('SUPER LIKE')}>
             <View style={styles.smallButton}>
               <Image style={styles.buttonIcon} source={Images.superLike} />
             </View>
           </TouchableOpacity>          
-          <TouchableOpacity onPress={() => console.log('LIKE')} >
+          <TouchableOpacity onPress={() => alert('LIKE')} >
             <View style={styles.biggerButton}>
               <Image style={styles.buttonIcon} source={Images.like} />
             </View>
           </TouchableOpacity>      
-          <TouchableOpacity onPress={ () => console.log('BOOST')}>
+          <TouchableOpacity onPress={ () => alert('BOOST')}>
             <View style={styles.smallButton}>
               <Image style={styles.buttonIcon} source={Images.boost} />
             </View>
           </TouchableOpacity>
-         <TouchableOpacity onPress= { () => console.log('NOPE')}>
+         <TouchableOpacity onPress= { () => alert('NOPE')}>
             <View style={styles.biggerButton}>
               <Image style={styles.buttonIcon} source={Images.nope} />
             </View>
          </TouchableOpacity>
-          <TouchableOpacity onPress= { () => console.log('REWIND')}>
+          <TouchableOpacity onPress= { () => alert('REWIND')}>
             <View style={styles.smallButton}>
               <Image style={styles.buttonIcon} source={Images.rewind} />
             </View>
