@@ -1,6 +1,7 @@
 import { StyleSheet, Platform} from 'react-native';
 
 export const styles = StyleSheet.create({
+    //============Parent view style==============
     container: {
       flex: 1,
       flexDirection: 'column',
@@ -8,6 +9,7 @@ export const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
     },
+    //============Header styles==============
     icons: {
       tintColor: '#C5C5C5',
       width: '10%',
@@ -24,6 +26,11 @@ export const styles = StyleSheet.create({
       paddingHorizontal: Platform.isPad ? 0 : 5,
       top: Platform.isPad ? 0: 5,
     },
+    logo: {
+      width: Platform.isPad ? '20%' : '25%',
+      height: '60%',
+    },
+    //============Tinder card styles==============
     profileCard: {
       borderColor: '#C5C5C5',
       borderWidth: 1,
@@ -36,20 +43,6 @@ export const styles = StyleSheet.create({
       margin: Platform.isPad ? '5%' : '15%',
       backgroundColor: '#FFF',
       bottom: '5%'  
-    },
-    buttonRow: {
-      flex: 1,
-      flexDirection: 'row-reverse',
-      justifyContent: 'space-between',
-      borderColor: '#C5C5C5',
-      width: '100%',
-      height: '10%',
-      paddingHorizontal: Platform.isPad ? 0 : '5%', // Must add percentage on Tablet
-      bottom: '5%'
-    },
-    logo: {
-      width: Platform.isPad ? '20%' : '25%',
-      height: '60%',
     },
     profileImg: {
       height: '90%',
@@ -77,6 +70,17 @@ export const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       fontSize: 22,
+    },
+    //============Bottom button styles==============
+    buttonRow: {
+      flex: 1,
+      flexDirection: 'row-reverse',
+      justifyContent: 'space-between',
+      borderColor: '#C5C5C5',
+      width: '100%',
+      height: '10%',
+      paddingHorizontal: Platform.isPad ? 0 : '5%', // Must add percentage on Tablet
+      bottom: '5%'
     },
     smallButton: {
       borderRadius: 50, 
