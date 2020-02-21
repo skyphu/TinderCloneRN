@@ -1,6 +1,7 @@
 import { StyleSheet, Platform} from 'react-native';
 
 export const styles = StyleSheet.create({
+    //============Parent view style==============
     container: {
       flex: 1,
       flexDirection: 'column',
@@ -8,6 +9,7 @@ export const styles = StyleSheet.create({
       // justifyContent: 'center',
       // alignItems: 'center',
     },
+    //============Header styles==============
     icons: {
       tintColor: '#C5C5C5',
       width: '10%',
@@ -21,37 +23,36 @@ export const styles = StyleSheet.create({
       flex: 1,
       flexDirection: 'row',
       justifyContent: 'space-between',
-      height: Platform.isPad ?  44: 55,
       borderBottomWidth: 1,
       borderColor: '#C5C5C5',
       marginTop: Platform.isPad ? 15 : 5,
       width: '100%',
+      paddingHorizontal: Platform.isPad ? 0 : 5,
+      top: Platform.isPad ? 0: 5,
     },
+    logo: {
+      width: Platform.isPad ? '20%' : '25%',
+      height: '60%',
+    },
+    //============Tinder card styles==============
     profileCard: {
       flex: 6,
       borderColor: '#C5C5C5',
       borderWidth: 1,
+      height: Platform.isPad ? '75%' : '80%',
+      width: 325,
       borderBottomEndRadius: 10,
       borderBottomStartRadius: 10,
       width: 350,
       height: 400,
       alignItems: 'center',
       flexDirection: 'column',
-      backgroundColor: '#FFF',    
-    },
-    buttonRow: {
-      flex: 1,
-      flexDirection: 'row-reverse',
-      justifyContent: 'space-between',
-      height: Platform.isPad ?  44: 56,
-      borderColor: '#C5C5C5',
-      margin: 15, // En android esto no es necesario
-      width: '100%',
-      paddingHorizontal: Platform.isPad ? 0 : '5%', // Must add percentage on Tablet
-      top: Platform.isPad ? 0: '1%',           
+      margin: Platform.isPad ? '5%' : '15%',
+      backgroundColor: '#FFF',
+      bottom: '5%'  
     },
     profileImg: {
-      // height: Platform.isPad ? '90%' : '110%',
+      height: '90%',
       width: '100%',
       justifyContent: 'center',
     },
@@ -79,6 +80,17 @@ export const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       fontSize: 22,
+    },
+    //============Bottom button styles==============
+    buttonRow: {
+      flex: 1,
+      flexDirection: 'row-reverse',
+      justifyContent: 'space-between',
+      borderColor: '#C5C5C5',
+      width: '100%',
+      height: '10%',
+      paddingHorizontal: Platform.isPad ? 0 : '5%', // Must add percentage on Tablet
+      bottom: '5%'
     },
     smallButton: {
       borderRadius: 50, 

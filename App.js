@@ -12,8 +12,8 @@ export default class App extends React.Component {
 
   render() {
     return (
-
       <View style={styles.container}>
+        {/* HEADER SECTION */}
         <View style={styles.header}>
             <TouchableOpacity onclick = {() => alert("settings clicked!")}>
               <View>
@@ -23,32 +23,40 @@ export default class App extends React.Component {
           <Image style={styles.logo} resizeMode="contain" source={Images.logo} />
           <Image style={styles.icons} resizeMode="contain" source={Images.chat} />
         </View>
-        {/* <View> */}
-          <SwipeCards /> 
-        {/* </View> */}
+        {/* SWIPE CARDS SECTION */}
+        <View style={{height: '85%', width: '90%'}}>
+          <SwipeCards/>  
+        </View>
         <View style = {styles.buttonRow}>
-        {/* This is for the lower icon bar*/}
-          <TouchableOpacity onPress={ () => console.log('SUPER LIKE')}>
+        {/* LOWER ICON BAR -- Buttons are in reverse order,
+          * so reverse-row must be used to fix
+          */}
+          {/* SUPER LIKE BUTTON */}
+          <TouchableOpacity onPress={ () => alert('SUPER LIKE')}>
             <View style={styles.smallButton}>
               <Image style={styles.buttonIcon} source={Images.superLike} />
             </View>
-          </TouchableOpacity>          
-          <TouchableOpacity onPress={() => console.log('LIKE')} >
+          </TouchableOpacity>  
+          {/* LIKE BUTTON */}
+          <TouchableOpacity onPress={() => alert('LIKE')} >
             <View style={styles.biggerButton}>
               <Image style={styles.buttonIcon} source={Images.like} />
             </View>
-          </TouchableOpacity>      
-          <TouchableOpacity onPress={ () => console.log('BOOST')}>
+          </TouchableOpacity>
+          {/* BOOST BUTTON */}
+          <TouchableOpacity onPress={ () => alert('BOOST')}>
             <View style={styles.smallButton}>
               <Image style={styles.buttonIcon} source={Images.boost} />
             </View>
           </TouchableOpacity>
-         <TouchableOpacity onPress= { () => console.log('NOPE')}>
+          {/* NOPE BUTTON */}
+         <TouchableOpacity onPress= { () => alert('NOPE')}>
             <View style={styles.biggerButton}>
               <Image style={styles.buttonIcon} source={Images.nope} />
             </View>
          </TouchableOpacity>
-          <TouchableOpacity onPress= { () => console.log('REWIND')}>
+         {/* REWIND BUTTON */}
+          <TouchableOpacity onPress= { () => alert('REWIND')}>
             <View style={styles.smallButton}>
               <Image style={styles.buttonIcon} source={Images.rewind} />
             </View>

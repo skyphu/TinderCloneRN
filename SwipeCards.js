@@ -32,9 +32,11 @@ class NoMoreCards extends Component {
  
   render() {
     return (
-          <View style={styles.name}>
+      <View style={styles.profileCard}>
+          <View style={styles.cardText}>
             <Text style={styles.noMoreCards}>No more cards</Text>
           </View>
+      </View>
     )
   }
 }
