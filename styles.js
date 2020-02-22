@@ -12,12 +12,12 @@ export const styles = StyleSheet.create({
     //============Header styles==============
     icons: {
       tintColor: '#C5C5C5',
-      width: '10%',
-      height: Platform.isPad ? '75%' : '25%',
+      width: '25%',
+      height: Platform.isPad ? '75%' : '75%',
     },
     logo: {
-      width: Platform.isPad ? '20%' : '25%',
-      height: '20%',
+      width: Platform.isPad ? '20%' : '30%',
+      height: '60%',
     },
     header: {
       flex: 1,
@@ -25,14 +25,9 @@ export const styles = StyleSheet.create({
       justifyContent: 'space-between',
       borderBottomWidth: 1,
       borderColor: '#C5C5C5',
-      marginTop: Platform.isPad ? 15 : 5,
+      // marginTop: Platform.isPad ? 15 : 5,
       width: '100%',
-      paddingHorizontal: Platform.isPad ? 0 : 5,
       top: Platform.isPad ? 0: 5,
-    },
-    logo: {
-      width: Platform.isPad ? '20%' : '25%',
-      height: '60%',
     },
     //============Tinder card styles==============
     profileCard: {
@@ -62,8 +57,6 @@ export const styles = StyleSheet.create({
       width: '100%',
       padding: Platform.isPad ? 10 : '2%',
       backgroundColor: '#FFF',
-      borderColor: '#C5C5C5',
-      borderWidth: 1,
     },
     name: {
       // paddingTop: 10,

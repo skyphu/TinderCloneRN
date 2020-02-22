@@ -15,16 +15,12 @@ export default class App extends React.Component {
       <View style={styles.container}>
         {/* HEADER SECTION */}
         <View style={styles.header}>
-            <TouchableOpacity onclick = {() => alert("settings clicked!")}>
-              <View>
-                <Image style={styles.icons} resizeMode="contain" source={Images.gear} />
-              </View>
-            </TouchableOpacity>
+          <Image style={styles.icons} resizeMode="contain" source={Images.gear} />
           <Image style={styles.logo} resizeMode="contain" source={Images.logo} />
           <Image style={styles.icons} resizeMode="contain" source={Images.chat} />
         </View>
         {/* SWIPE CARDS SECTION */}
-        <View style={{height: '85%', width: '90%'}}>
+        <View style={{height: '85%', width: '100%'}}>
           <SwipeCards/>  
         </View>
         <View style = {styles.buttonRow}>
